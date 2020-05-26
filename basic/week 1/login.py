@@ -11,11 +11,12 @@ def authenticate(username, password):
 def login():
     if request.method == 'POST': 
         username, password = request.form["username"], request.form["password"]
-        if authenticate(username,password):
+        success = authenticate(username,password)
+        if success:
             message = f"welcome {username}"
         else:
             message = f"Logid failed: username/password incorrect"
-        return render_template("message.html", message = message, success=False)
+        return render_template("message.html", message = message, success=success)
     else:
         return "only post requests are allowed"
 
