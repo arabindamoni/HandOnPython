@@ -13,8 +13,8 @@ def authenticate(username, password):
         "Arabinda":"abcd"
     }
     
-    if username in usernamedic and usernamedic[username] == password:
-        return True
+    return username in usernamedic and usernamedic[username] == password
+        # return True
 
     # usernameList = ["Shayani", "Arabinda", "Ria"]
     # passwordList = ["1234","abcd","dddd"]
@@ -39,7 +39,7 @@ def authenticate(username, password):
     #elif username == usernameList[1] and password == passwordList[1]:
         #return True      
 
-    return False
+    # return False
 
 
 @app.route("/login", methods=["post"])
