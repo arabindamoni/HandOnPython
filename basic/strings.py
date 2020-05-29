@@ -41,5 +41,6 @@ i= s.index(' ')
 # k = s.index(' ',j+1)
 
 # print(s[k+1:]+ " "+ s[j+1:k] + " " + s[i+1:j]+" "+ s[0:i])
-for i in s:
-    
+for i in range(2):
+    print(s)
+
