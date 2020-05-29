@@ -36,7 +36,7 @@ s = "hello munai kemon achis"
 # index(char/str, start=0, end=-1)
 # print(s.index(' ',i+1))
 # print(s.split())
-i= s.index(' ')
+# i= s.index(' ')
 # j = s.index(' ',i+1)
 # k = s.index(' ',j+1)
 
