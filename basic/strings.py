@@ -55,7 +55,7 @@ s = "hello munai kemon achis"
 # print(" ".join(res[::-1]))
 
 # split
-s = "hello munai kemon achis"
+# s = "hello munai kemon achis"
 # # output = "achis kemon munai hello"
 # # print(s.split())
 # # print("my run")
