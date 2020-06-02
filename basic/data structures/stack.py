@@ -5,8 +5,7 @@ class mystack:
         self.pos = 0
         return
     
-    ### arr= [0,1,2], arr = [5,1,2], arr[0] = 5
-    ## 
+    ### arr= [0,1,2], arr = [5,1,2], arr[0] = 5     
 
     # return True if val is pushed else return False
     def push(self, val):
@@ -37,5 +36,3 @@ for el in [1,2,3,4,5,6,7]:
 
 for i in range(10):
     print(stack.pop())
-
-
