@@ -44,14 +44,16 @@ class LinkedList:
         if self.head == None:
             return None
         elif self.head.next == None:
+            val2 = self.head.val
             self.head = None
-            return None
+            return val2
         else:
             cur = self.head
             while cur.next.next is not None:
                 cur = cur.next
+            val3 = cur.next.val
             cur.next = None
-            return self.head
+            return val3
     
     
     # remove leftmost node and assign new head
@@ -74,11 +76,11 @@ for el in [10,15,5,20]:
     ll.append(el)
 ll.printlist()
 
-ll.popleft()
+print('popleft',ll.popleft())
 ll.printlist()       
 
 for i in range(5):
-    ll.pop()
+    print('pop',ll.pop())
     ll.printlist()
 
 # 10 ->15 ->5 ->20 ->
