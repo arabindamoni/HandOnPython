@@ -69,19 +69,46 @@ class LinkedList:
             self.head = self.head.next            
             return val1
        
+    
+    # insert val at position node
+    # i: (10)->(15)->(5)->(20) , insert(3,55)
+    # o: (10)->(15)->(5)->(55)->(20)
+    # i: (10)->(15)->(5)->(20) , insert(0,33)
+    # o: (33)->(10)->(15)->(5)->(20)
+    # i: (10)->(15)->(5)->(20) , insert(5,100)
+    # o: (10)->(15)->(5)->(20)->(100)
+    # assume inputs are valid
+    def insert(self, position, val):
+        if self.head == None:
+            new_node = ListNode(val)
+            self.head = new_node
+        else:
+            cur = self.head
+            for i in range(position-1):# 0,1,2 
+                cur = cur.next
+            new_node = ListNode(val)
+            new_node.next = cur.next
+            cur.next = new_node
+            # cur = 2
+        return self.head
+            
 
 
 ll = LinkedList()
 for el in [10,15,5,20]:
     ll.append(el)
 ll.printlist()
+ll.insert(3,55)
+ll.printlist()
 
-print('popleft',ll.popleft())
-ll.printlist()       
+# print('popleft',ll.popleft())
+# ll.printlist()       
 
-for i in range(5):
-    print('pop',ll.pop())
-    ll.printlist()
+# for i in range(5):
+#     print('pop',ll.pop())
+#     ll.printlist()
+
+
 
 # 10 ->15 ->5 ->20 ->
 
@@ -91,3 +118,4 @@ for i in range(5):
 
 
 # 15 ->
+
