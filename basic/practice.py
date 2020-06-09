@@ -99,5 +99,17 @@ def print_it(l):
 
 
 # LOOP while
-# integer division, mod, variable assignment      
+# integer division, mod, variable assignment  
+# variable access in class node.next, node.next.next
+#    
         
+# Question 6: Write a recursive function to calculate the sum of numbers from 0 to 10
+def rec_func(num):
+    sum1 = 0
+    for i in range(num+1):
+        sum1 = sum1 + i
+        
+    print (sum1)
+
+
+rec_func(12)
