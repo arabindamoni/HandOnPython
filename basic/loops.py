@@ -167,6 +167,6 @@ def merge_sorted_arrays_2(arr1, arr2, arr3):
     res = []
     return res
 
-print(merge_sorted_arrays([1,2,3,4,6,7],[4,5,8,9], [55,66]))
-print(merge_sorted_arrays([1,2,3,4,6,7],[],[]))
-print(merge_sorted_arrays([1,2,3,4,6,7],[1,2,3,4,6,7,10,22],[5,6,7,8,9,10]))
+print(merge_sorted_arrays_2([1,2,3,4,6,7],[4,5,8,9], [55,66]))
+print(merge_sorted_arrays_2([1,2,3,4,6,7],[],[]))
+print(merge_sorted_arrays_2([1,2,3,4,6,7],[1,2,3,4,6,7,10,22],[5,6,7,8,9,10]))
