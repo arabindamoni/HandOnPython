@@ -157,16 +157,111 @@ def merge_sorted_arrays(arr1, arr2):
     
     return  arr3
 
-print(merge_sorted_arrays([1,2,3,4,6,7],[4,5,8,9]))
-print(merge_sorted_arrays([1,2,3,4,6,7],[]))
-print(merge_sorted_arrays([1,2,3,4,6,7],[1,2,3,4,6,7,10,22]))
+# print(merge_sorted_arrays([1,2,3,4,6,7],[4,5,8,9]))
+# print(merge_sorted_arrays([1,2,3,4,6,7],[]))
+# print(merge_sorted_arrays([1,2,3,4,6,7],[1,2,3,4,6,7,10,22]))
 
 
 
-def merge_sorted_arrays_2(arr1, arr2, arr3):
-    res = []
+# def merge_sorted_arrays_2(arr1, arr2, arr3):
+#     res = []
+#     return res
+
+# print(merge_sorted_arrays_2([1,2,3,4,6,7],[4,5,8,9], [55,66]))
+# print(merge_sorted_arrays_2([1,2,3,4,6,7],[],[]))
+# print(merge_sorted_arrays_2([1,2,3,4,6,7],[1,2,3,4,6,7,10,22],[5,6,7,8,9,10]))
+
+
+# def merge_sorted_arrays_2(arr1, arr2, arr3):
+#     temp = merge_sorted_arrays(arr1, arr2)
+#     return merge_sorted_arrays(temp, arr3)
+    
+    # res = []
+    # i = 0
+    # j = 0
+    # k = 0    
+    # m = len(arr1)
+    # n = len(arr2)
+    # p = len(arr3)
+
+    # while i < m and j < n and k < p:
+    #     if arr1[i] <= arr2[j] and arr1[i] <= arr3[k]:
+    #         res.append(arr1[i])
+    #         i += 1
+    #     elif arr2[j] <= arr1[i] and arr2[j] <= arr3[k]:
+    #         res.append(arr2[j])
+    #         j += 1
+    #     else:
+    #         res.append(arr3[k])
+    #         k += 1
+    # while i < m:        
+    #     res.append(arr1[i])
+    #     i += 1
+    # while j < n:        
+    #     res.append(arr2[j])
+    #     j += 1 
+    # while k < p:        
+    #     res.append(arr3[k])
+    #     k += 1 
+
+
+    # temp = []
+    # while i < m and j < n:
+    #     if (arr1[i] < arr2[j]):
+    #         temp.append(arr1[i])
+    #         i += 1
+    #     else:
+    #         temp.append(arr2[j])
+    #         j += 1
+    # while j < n:        
+    #     temp.append(arr2[j])
+    #     j += 1
+    # while i < m:        
+    #     temp.append(arr1[i])
+    #     i += 1
+    # l = 0
+    # s = len(temp)    
+    # while l < s and k < p:
+    #     if (temp[l] < arr3[k]):
+    #         res.append(temp[l])
+    #         l += 1
+    #     else:
+    #         res.append(arr3[k])
+    #         k += 1
+    # while l < s:        
+    #     res.append(temp[l])
+    #     l += 1
+    # while k < p:        
+    #     res.append(arr3[k])
+    #     k += 1
+    # return res
+
+# print(merge_sorted_arrays_2([1,2,3,4,6,7],[4,5,8,9], [55,66]))
+# print(merge_sorted_arrays_2([1,2,3,4,6,7],[],[]))
+# print(merge_sorted_arrays_2([1,2,3,4,6,7],[1,2,3,4,6,7,10,22],[5,6,7,8,9,10]))
+
+
+
+# arr = [3,4,2,4,5,6,4,5]
+# output = {2:1,3:1,4:3,5:2,6:1}
+#arr1 = [1,1,1,1]    # arr1[4]
+#temp = [1,2,2,2,3]
+# k = 5, v=10
+# dic[5]= 10
+# dic[5] = 15
+# {5:15}
+def list_count(arr):
+    res = {}
+    count = 1
+    temp = set(arr)
+    for i in range(len(arr) - 1): #0123
+
+        if arr[i] == arr[i+1]:
+            count += 1
+            res[arr[i]] = count
+        else:
+            # res[arr[i]] = count  #res = {1,}
+            res[arr[i]] = count
+            count = 1
+       
     return res
-
-print(merge_sorted_arrays_2([1,2,3,4,6,7],[4,5,8,9], [55,66]))
-print(merge_sorted_arrays_2([1,2,3,4,6,7],[],[]))
-print(merge_sorted_arrays_2([1,2,3,4,6,7],[1,2,3,4,6,7,10,22],[5,6,7,8,9,10]))
