@@ -250,18 +250,123 @@ def merge_sorted_arrays(arr1, arr2):
 # dic[5]= 10
 # dic[5] = 15
 # {5:15}
-def list_count(arr):
-    res = {}
-    count = 1
-    temp = set(arr)
-    for i in range(len(arr) - 1): #0123
+# def list_count(arr):
+#     res = {}
+#     count = 1
+#     temp = set(arr)
+#     for i in range(len(arr) - 1): #0123
 
-        if arr[i] == arr[i+1]:
-            count += 1
-            res[arr[i]] = count
-        else:
-            # res[arr[i]] = count  #res = {1,}
-            res[arr[i]] = count
-            count = 1
+#         if arr[i] == arr[i+1]:
+#             count += 1
+#             res[arr[i]] = count
+#         else:
+#             # res[arr[i]] = count  #res = {1,}
+#             res[arr[i]] = count
+#             count = 1
        
+#     return res
+
+
+# rotate an array k place
+# arr= [1,2,3,4,5,6] k = 2 --> arr=[3,4,5,6,1,2]
+# arr_rev=[6,5,4,3,2,1]
+# def rotate_arr(arr, k):
+#     l = len(arr)
+#     new_arr = []
+#     for i in range(k, l):
+#         new_arr.append(arr[i])
+#     for j in range(0, k):
+#         new_arr.append(arr[j])
+#     return new_arr
+
+# arr= [1,2,3,4,5,6] 
+# print(rotate_arr(arr, 7)) 
+
+
+# arr = [3,4,2,4,5,6,4,5]
+# def dictionary(arr):
+#     res = {}
+#     # arr.sort()
+#     for i in arr: 
+#         res[i] = arr.count(i)
+#     return res
+    
+# print (dictionary(arr))
+# print (list_count(arr))
+
+# given arr and a target number T, return True 
+# if there exists i,j such that arr[i] + arr[j] == T , i != j
+# arr = [3,4,2,5,1],  T = 8 --> True (5+3 == T)
+# T = 10 return False
+# def two_sum(arr, T):
+#     # for i in range(len(arr)):
+#     #     for j in range(i+1, len(arr)):
+#     #         if arr[i] + arr[j] == T:
+#     #             return True           
+    
+#     # for i in range(len(arr)):
+#     #     var = T - arr[i]
+#     #     if var in arr:
+#     #         return True
+   
+#     # [3,4,5] , T =7 
+#     new_dict = {}
+#     for i in range(len(arr)):
+#         var = T - arr[i]   # 6 - 3 = 3
+#           # {3:1}
+#         if var in new_dict:# 3 in new_dict => True
+#             return True  # True
+#         new_dict[arr[i]] = 1
+#     return False
+
+
+# arr = [3,4,2,5,1]
+# T = 8
+# print(two_sum(arr, T))
+
+
+# Given an array return a sum_arr such that i'th element 
+# of sum_arr is cumulative prefix sum upto i'th index in arr 
+# arr = [1,2,3,4,5] => [1,3,6,10,15]
+def prefix_sum(arr):
+    res = []
     return res
+
+print(prefix_sum([1,2,3,4,5]))
+
+
+#Given an array of integers arr, a lucky integer is an integer which has a frequency in the array equal to its value.
+
+# Return a lucky integer in the array. If there are multiple lucky integers return the largest of them. 
+# If there is no lucky integer return -1.
+
+ 
+
+# Example 1:
+
+# Input: arr = [2,2,3,4]
+# Output: 2
+# Explanation: The only lucky number in the array is 2 because frequency[2] == 2.
+# Example 2:
+
+# Input: arr = [1,2,2,3,3,3]
+# Output: 3
+# Explanation: 1, 2 and 3 are all lucky numbers, return the largest of them.
+# Example 3:
+
+# Input: arr = [2,2,2,3,3]
+# Output: -1
+# Explanation: There are no lucky numbers in the array.
+# Example 4:
+
+# Input: arr = [5]
+# Output: -1
+# Example 5:
+
+# Input: arr = [7,7,7,7,7,7,7]
+# Output: 7
+
+# https://leetcode.com/
+
+def findLucky(arr):
+    return False
