@@ -330,10 +330,13 @@ def merge_sorted_arrays(arr1, arr2):
 # arr = [1,2,3,4,5] => [1,3,6,10,15]
 def prefix_sum(arr):
     res = []
+    sum_ = 0
+    for i in range(len(arr)):
+        sum_ = arr[i] + sum_
+        res.append(sum_)
     return res
 
 print(prefix_sum([1,2,3,4,5]))
-
 
 #Given an array of integers arr, a lucky integer is an integer which has a frequency in the array equal to its value.
 
@@ -367,6 +370,43 @@ print(prefix_sum([1,2,3,4,5]))
 # Output: 7
 
 # https://leetcode.com/
-
+def dictionary(arr):
+    res = {}
+    arr.sort()
+    for i in arr: 
+        res[i] = arr.count(i)
+    return res
+    
+# print (dictionary(arr))
 def findLucky(arr):
+    
+    new_arr = []
+    
+    new_dict = dictionary(arr)
+    for key, value in new_dict.items():
+        if key == value:
+            new_arr.append(key)
+    if len(new_arr) < 1:
+        print("Lucky number: -1, As there are no lucky numbers in the array.")
+    else:
+        print("Lucky number: ",new_arr[-1])
+            
     return False
+arr1 = [2,2,3,4,5,5,5,5,5]
+arr2 = [1,2,2,3,3,3]
+arr3 = [2,2,2,3,3]
+arr4 = [5]
+arr5 = [7,7,7,7,7,7,7]
+arr6= [1,1,2,4,4,4,4,3,3,3]
+print("Try 1:")
+findLucky(arr1)
+print("Try 2:")
+findLucky(arr2)
+print("Try 3:")
+findLucky(arr3)
+print("Try 4:")
+findLucky(arr4)
+print("Try 5:")
+findLucky(arr5)
+print("Try 6:")
+findLucky(arr6)
