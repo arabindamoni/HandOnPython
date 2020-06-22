@@ -229,7 +229,10 @@ def subsequence(s1, s2):
     if s2[0] == s1[0]:
         return subsequence(s1[1:], s2)
     return subsequence(s1[1:], s2[1:])
+# s1 = 
+# subsequence(s1, s2)
 
+# [1,2,3] = [[],[1],[2],[3],[1,2],[2,3],[1,3],[1,2,3]]
 
 
 
