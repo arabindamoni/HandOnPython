@@ -289,39 +289,39 @@ def generate_subset_size_3(s, n):
 # s1 = [2,3] = [[],[2],[3],[2,3]]   = [[],[2],[3],[2,3],[1],[1,2],[1,3],[1,2,3]]
 # s2 = [3] = [[],[3]] = [[],[3],[2],[2,3]]
 
-def generate_subsets(s):
-    res = []
-    res = generate_subsets(s[0])
-    return res 
+# def generate_subsets(s):
+#     res = []
+#     res = generate_subsets(s[0])
+#     return res 
 
-#  n = 2
-# # [[1,2],[1,3][1,4],[1,5],[2,3],[2,4][2,5],[3,4],[3,5],[4,5]] 
-# # list(range(2,5)) => [2,3,4]
-def generate_subset_size_2(s):
-    res = []
-    for i in range(0,len(s)): # 1
-        for j in range(i+1,len(s)):
-            res.append([s[i],s[j]])
+# #  n = 2
+# # # [[1,2],[1,3][1,4],[1,5],[2,3],[2,4][2,5],[3,4],[3,5],[4,5]] 
+# # # list(range(2,5)) => [2,3,4]
+# def generate_subset_size_2(s):
+#     res = []
+#     for i in range(0,len(s)): # 1
+#         for j in range(i+1,len(s)):
+#             res.append([s[i],s[j]])
             
-    return res
+#     return res
     
 # s = [1,2,3,4,5]
 # print(generate_subset_size_2(s))
 
 # s = [2,3,4,5] n=2  [[2,3],[2,4],[2,5],[3,4],[3,5],[4,5]]
 # n=3 => [[1,2,3],[1,2,4],[1,2,5],[1,3,4],[1,3,5],[1,4,5],[2,3,4],[2,3,5],[2,4,5],[3,4,5]]
-def generate_subset_size_3(s):
-    res = []
-    res1 = generate_subset_size_2(s)
-    for i in range(0,len(s)-2):        
-        res = generate_subset_size_2(s[i+1:]) #[2,3]
-        for j in range(len(res)):
-            res1.append([i+1] + res[j])
-    # print (res1)
-    # res1.append(generate_subset_size_2(s))
-    return res1 
-s = [1,2,3,4,5]
-print (generate_subset_size_3(s))
+# def generate_subset_size_3(s):
+#     res = []
+#     res1 = generate_subset_size_2(s)
+#     for i in range(0,len(s)-2):        
+#         res = generate_subset_size_2(s[i+1:]) #[2,3]
+#         for j in range(len(res)):
+#             res1.append([i+1] + res[j])
+#     # print (res1)
+#     # res1.append(generate_subset_size_2(s))
+#     return res1 
+# s = [1,2,3,4,5]
+# print (generate_subset_size_3(s))
 
 # l = [[2,3],[5,6],[4,5,6,7,8]] 
 # # res = [[1,2,3],[1,5,6],[1,4,5,6,7,8]]
@@ -346,3 +346,41 @@ print (generate_subset_size_3(s))
 
 # print(append_1_easy(l))
 
+def generate_subsets(s):
+    # res = []
+    if s == []:
+        return [[]]
+    else:
+        a = generate_subsets(s[1:])  # [[],[2],[3],[4],[2,3],[2,4],[3,4],[2,3,4]]
+        res = a[:]  # deepcopy
+        # res = a
+        # a=[1,2,3] => res [1,2,3]
+        # a[2] = 5 , a = [1,2,5]
+        # res=[1,2,3]
+        # a = 5
+        # res = a
+        # a = 4
+        # res 
+        for b in a: 
+            res.append([s[0]] + b)
+        res = list(sorted(res))
+        print(f'{s} => {res}')
+        return res # [[],[2],[3],[4],[2,3],[2,4],[3,4],[2,3,4]] + [[1],[1,2],[1,2,3],....]   
+        # res = a + [[1],[1,2],[1,2,3],...]
+         # return (a + [[s[0]] + b for b in a])
+
+    # return res
+
+s = [1, 2, 3, 4]   #[[]], [1], [] 
+# [1,2,3,4] => [1] , generate_subsets([2,3,4])
+# a = generate_subsets([2,3,4])
+# a = [[]],[2],[3],[4],[2,3],[2,4],[3,4],[2,3,4]]
+# for b in a:
+#   print(b)
+# [1] + [b for b in [[]],[2],[3],[4],[2,3],[2,4],[3,4],[2,3,4]]]
+# print(list(sorted(generate_subsets(s))))
+
+
+
+# 1. reverse a list using recursion
+# 2. reverse a linked list using recursion
