@@ -383,4 +383,36 @@ s = [1, 2, 3, 4]   #[[]], [1], []
 
 
 # 1. reverse a list using recursion
+def reverse_list(l):
+    if len(l) == 0:
+        return []
+    else:
+        return (reverse_list(l[1:]) + [l[0]])
+
+l = [1,2,3,4]
+print (reverse_list(l))
+
+
+# is palindrome
+# 101 -> True, 102 -> False, 1 -> True
+def isPalNum(num):
+#     if len(num) < 1:
+#         return True
+#     else:
+#         if num[0] == num[-1]:
+#             return isPalNum(num[1:-1])
+#         else:
+#             return False
+# num= "jkhgad" #"madam"
+
+# if(isPalNum(num)==True):
+#     print("Palindrome!")
+# else:
+#     print("Not Palindrome!")
+#     return 
+
+
+print(isPalNum(101))
+
 # 2. reverse a linked list using recursion
+
