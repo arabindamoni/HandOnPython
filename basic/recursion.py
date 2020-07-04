@@ -395,7 +395,7 @@ print (reverse_list(l))
 
 # is palindrome
 # 101 -> True, 102 -> False, 1 -> True
-def isPalNum(num):
+# def isPalNum(num):
 #     if len(num) < 1:
 #         return True
 #     else:
@@ -412,7 +412,69 @@ def isPalNum(num):
 #     return 
 
 
-print(isPalNum(101))
+# print(isPalNum(101))
 
 # 2. reverse a linked list using recursion
 
+# 3. is palindrome
+# 101 -> True, 102 -> False, 1 -> True
+def isPalNum(num, res):
+    if num == 0:
+        return res
+    res = (res*10) + (num%10)
+    return isPalNum((num//10), res)
+num = 102
+res = 0
+p = isPalNum(num, res)
+if (num == p):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+# print(isPalNum(102))
+
+# [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
+# for key,val in dic.items():
+# {'harry':10,'Tom':30}
+# vals = dic.values()
+# vals = sorted(list(set(vals)))
+# vals = [10,20]
+# second_max = vals[-2]
+# for key,val in dic.items():
+#   if val == second_max:
+#       result.append(key)
+# return list(sorted(result))[0]
+
+
+# pow(n) == 2**n
+# 2**4 = (2**2)**2  = pow_2((pow_2(2)))
+# 2**8 = (2**4)**2
+# 2**5 = (2**4) * 2
+# 2**0 = 1
+
+
+# O(n) calls
+# O(logn) calls
+# def pow_2(n):
+#     m = n/2
+#     if n == 0:
+#         return 1
+#     else:
+#         return pow_2((2*pow_2(n//2))
+#         return pow_2(m)*pow_2(2)
+
+
+# pow2(n) = ? when n is odd     n = 5      ((2**n//5)**2)*2
+#         = ? when n is even    n = 8       (2**n/2)**2
+#         = ? when n is a special value ?    n = 0 , 1
+
+
+# pow2(5) = ((2**2)**2)*2 = (pow2(2)**2)*2 = 32 
+#pow2(2) = ((pow2(2/2)**2) = 4
+#pow2 (1) = ((pow2(0)**2)*2) = 2
+#pow2(0) = 1
+
+# print(pow_2(10)) 
+# print(pow_2(124)) 
+
+# 2**4 = (2**2)**2  = pow_2((pow_2(2)))
+# n= 8, (2 ** 4)**2,   n/2 
